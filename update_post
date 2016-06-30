@@ -1,0 +1,111 @@
+#!/usr/bin/env python
+
+import argparse, json, os, requests, sys, yaml
+from sys import stdin
+from datetime import datetime
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='Update Ghost blog posts with Travis CI commits')
+    parser.add_argument('-c',  '--config', type=argparse.FileType('r'),
+            help='config file to load settings from', default='config.yaml')
+    parser.add_argument('-id', '--client-id', help='Ghost oAuth client ID', default=os.environ.get('ghost_client_id', None))
+    parser.add_argument('-s',  '--client-secret', help='Ghost oAuth client secret', default=os.environ.get('ghost_client_secret', None))
+    parser.add_argument('-u',  '--username', help='Ghost login username', default=os.environ.get('ghost_username', None))
+    parser.add_argument('-p',  '--password', help='Ghost login password', default=os.environ.get('ghost_password', None))
+    parser.add_argument('-d',  '--domain', help='Ghost domain where your blog is hosted', default=os.environ.get('ghost_domain', None))
+
+    return parser.parse_args()
+
+def load_config(config_file):
+    print('Loading config file {}'.format(config_file.name))
+    try:
+        config = yaml.load(config_file)
+    except yaml.YAMLError as e:
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+        print('Error loading YAML {} on line {}'.format(e, exc_tb.tb_lineno))
+
+    return config
+
+def get_oauth_token():
+    auth_url = '{}/authentication/token'.format(api_base)
+    payload  = {
+             'grant_type':    'password',
+             'username':      args.username,
+             'password':      args.password,
+             'client_id':     args.client_id,
+             'client_secret': args.client_secret
+             }
+    token_request = requests.post(auth_url, data=payload)
+
+    response = token_request.json()
+    return response['access_token']
+
+def revoke_oauth_token(auth_token):
+    auth_url = '{}/authentication/revoke'.format(api_base)
+    payload_headers = {
+            'Authorization': 'Bearer {}'.format(auth_token)
+            }
+    payload = {
+            'token_type_hint': 'access_token',
+            'client_id':       args.client_id,
+            'client_secret':   args.client_secret,
+            'token':           auth_token
+            }
+    revoke_request = requests.post(auth_url, data=payload, headers=payload_headers)
+
+def update_post(auth_token, post, post_id, post_content):
+    post_url = '{}/posts/{}'.format(api_base, post_id)
+    payload_headers = {
+            'Authorization': 'Bearer {}'.format(auth_token),
+            'content-type':  'application/json; charset=UTF-8'
+            }
+    payload = {
+            'posts': [{
+                'id': post_id,
+                'markdown': post_content
+            }]}
+
+    update = requests.put(post_url, data=json.dumps(payload), headers=payload_headers)
+
+    if update.status_code == requests.codes.ok:
+        print("Post '{}' updated sucsessfully".format(post))
+
+def main():
+    global config
+    global args
+    global api_base
+
+    args   = parse_args()
+    config = load_config(args.config)
+
+    # Define our ghost domain
+    ghost_domain = args.domain
+    api_base     = '{}/ghost/api/v0.1'.format(ghost_domain)
+
+    updated_posts = []
+    for line in sys.stdin:
+        updated_posts.append(line.rstrip())
+
+    print 'Posts to update: {}'.format(len(updated_posts))
+
+    # Generate oAuth token to talk to Ghost with
+    auth_token   = get_oauth_token()
+
+    current_time = datetime.now().strftime('%d/%m/%Y %H:%M')
+    commit_id    = os.environ.get('TRAVIS_COMMIT')
+    repo_slug    = os.environ.get('TRAVIS_REPO_SLUG')
+
+    for post in updated_posts:
+        if post in config['posts']:
+            post_id = config['posts'][post]
+            print("Updating post '{}' (ID: {!s})".format(post, post_id))
+            post_contents = open(post, 'r').read()
+            post_contents += '<small>Last updated: <time datetime="{}">{}</time> for commit <a href="https://github.com/{}/commit/{}">{}</a></small>'.format(current_time, current_time, repo_slug, commit_id, commit_id[:7])
+            update_post(auth_token, post, post_id, post_contents)
+        else:
+            print("Unknown post '{}', skipping".format(post))
+
+    revoke_oauth_token(auth_token)
+
+if __name__ == '__main__':
+    main()

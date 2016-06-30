@@ -1,0 +1,4 @@
+---
+language: python
+install: "pip install -r requirements.txt"
+script: "git diff-tree --no-commit-id --name-only -r HEAD | ./update_post"
