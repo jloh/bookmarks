@@ -3,9 +3,7 @@ I'm constantly searching for new tools and resources after reading other blog po
 # Analytics Tools
 
  * [Google Analytics](http://www.google.com/analytics/ "Google Analytics - Mobile, Premium and Free Website Analytics – Google")
-  * There is a tool [here](https://ga-dev-tools.appspot.com/query-explorer/ "Query Explorer &mdash; Google Analytics Demos &amp; Tools") to make some super sick reports
- * [Piwik](https://piwik.org/ "Piwik - Free Web Analytics Software") <i class="foundicon-star"></i>  
-Piwik is a free and open source web analytics application written by a team of international developers that runs on a PHP/MySQL webserver. It tracks online visits to one or more websites and displays reports on these visits for analysis.
+ * [Piwik](https://piwik.org/ "Piwik - Free Web Analytics Software")
 
 # Publishing Platforms & Tools
 ## Platforms
