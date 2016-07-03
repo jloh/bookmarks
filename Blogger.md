@@ -10,7 +10,7 @@ I'm constantly searching for new tools and resources after reading other blog po
 ### Hosted/SaaS
  * [Blogger](https://www.blogger.com/ "Blogger")
  * [GitHub Pages](https://pages.github.com/ "GitHub Pages")
- * [Ghost](https://ghost.org/ "Ghost - Just a blogging platform") (Runs this blog!)
+ * [GhostPro](https://ghost.org/ "Ghost - Just a blogging platform") (Runs this blog!)
  * [Medium](https://medium.com/ "Medium")
  * [Squarespace](https://www.squarespace.com/ "Build a Website - Squarespace")
  * [Tumblr](https://www.tumblr.com/ "Sign up | Tumblr")
