@@ -17,6 +17,7 @@ I'm constantly searching for new tools and resources after reading other blog po
  * [KeystoneJS](http://keystonejs.com/ "KeystoneJS &middot; Node.js cms and web application platform built on Express and MongoDB")
  * [Kirby](http://getkirby.com/ "Kirby is a file-based cms | Kirby")
  * [Medium](https://medium.com/ "Medium")
+ * [October](http://octobercms.com/)
  * [Perch](https://grabaperch.com/ "Perch - The really little content management system (CMS)")
  * [Squarespace](https://www.squarespace.com/ "Build a Website - Squarespace")
  * [Tinypress](https://tinypress.co/ "Create and easily manage your blog on Github &middot; Tinypress")
