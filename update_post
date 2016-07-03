@@ -100,7 +100,7 @@ def main():
             post_id = config['posts'][post]
             print("Updating post '{}' (ID: {!s})".format(post, post_id))
             post_contents = open(post, 'r').read()
-            post_contents += '\n\n<small>Last updated: <time datetime="{}">{}</time> for commit <a href="https://github.com/{}/commit/{}">{}</a></small>'.format(current_time, current_time, repo_slug, commit_id, commit_id[:7])
+            post_contents += '\n\n<small>Last updated: <time datetime="{}">{}</time> by commit <a href="https://github.com/{}/commit/{}">{}</a></small>'.format(current_time, current_time, repo_slug, commit_id, commit_id[:7])
             update_post(auth_token, post, post_id, post_contents)
         else:
             print("Unknown post '{}', skipping".format(post))
