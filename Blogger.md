@@ -5,6 +5,10 @@ I'm constantly searching for new tools and resources after reading other blog po
  * [Google Analytics](http://www.google.com/analytics/ "Google Analytics - Mobile, Premium and Free Website Analytics – Google")
  * [Piwik](https://piwik.org/ "Piwik - Free Web Analytics Software")
 
+# Email Campaign Platforms
+ * [charley](https://charley.io/ "Charley Email Marketing &#8211; Beautiful Email Marketing Made Simple")
+ * [MailChimp](http://mailchimp.com/ "MailChimp email marketing")
+
 # Publishing Platforms & Tools
 ## Platforms <br><small>**Note:** Some platforms may appear twice below as as they have hosted and self-hosted options
 ### Hosted/SaaS
