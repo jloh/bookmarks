@@ -1,5 +1,6 @@
 ---
 language: python
+cache: pip
 install: "pip install -r requirements.txt"
 script: "git diff-tree --no-commit-id --name-only -r HEAD | ./update_post"
 notifications:
@@ -7,4 +8,3 @@ notifications:
     recipients:
       - secure: "Bk0z3ZrE8Z1KcBOH8Ld73gep+H8AHwBWyXJDICc+ZJA5Z9W0dbWdXYhOUiCXNM+Ybx2ibw13oIPwa3G/kD1QtlqGAsXtnpFVStlNBHE9Age9xaqHyIHuUxOSSYDCxcb8Eh8URWM5bFrvei9JJzFl1OjCBqjrANupjt+bkCMpx18SRnvQPxz35Do3XYEV4KYsq8xs3lVepPsulY+VNSxdt6MHSZ/CIfi3rOcEo43d/ZZvvrbDu2EkrpT5+kCpaPsGwLE7bfjLJiFT4Qbb5/vYtw6dvRt6ZaRfnApbv3qcDHLWILHDvJvLzIQtCYLicmKchY3T/Gjpn24Hfo88YTRVySi6TsgcMLVAvv70ER+wsLB1WXRB2RZib5Rt0xepbkM1LQlPyPhEIRLWtMGIBxj4ycN7GWj4IJIobP8HFy93bqPlF1BcUGA6a9z2fsHXhdCZB61a8at2cQTMmwyjB+H+HuvvS+vJQsxI9H5qdssl96hDl13hgv8JAYY9+Y+I1aL5iMhXYoEgOmhcejVHjRcX8Yw+hUbWC21E/koY2BbXSHom/S0zWp28eN738pf5sT/gucFayVlhocAXkre8ZacEG7BWMv1hluDPPeGHvo32jguJtPXHPcsfEqsKmc6lOFfizlpeXVCMc/pVyVtBK478b41T61fJWwwpC3Ivb0onzYQ="
     on_success: always
-    on_failure: always
