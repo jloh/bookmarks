@@ -8,6 +8,7 @@ I'm constantly searching for new tools and resources after reading other blog po
 # Email Campaign Platforms
  * [charley](https://charley.io/ "Charley Email Marketing &#8211; Beautiful Email Marketing Made Simple")
  * [MailChimp](http://mailchimp.com/ "MailChimp email marketing")
+ * [SendGrid](https://sendgrid.com/ "SendGrid - Marketing &amp; Transactional Email Service")
 
 # Publishing Platforms & Tools
 ## Platforms <br><small>**Note:** Some platforms may appear twice below as as they have hosted and self-hosted options
