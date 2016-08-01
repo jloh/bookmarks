@@ -75,6 +75,9 @@ I'm constantly searching for new tools and resources after reading other blog po
  * [Flickr](https://www.flickr.com/creativecommons/ 'Flickr: Creative Commons') (Creative Commons)
  * [Zoomy](http://zoommyapp.com/ "Zoommy")
 
+### Processing
+ * [ImageOptim](https://imageoptim.com "ImageOptim — better Save for Web")
+
 ## Video
 
  * [Vimeo](https://vimeo.com/creativecommons "Creative Commons on Vimeo") (Creative Commons)
