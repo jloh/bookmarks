@@ -42,6 +42,9 @@ I'm constantly searching for new tools and resources after reading other blog po
 ## Static HTML Generators
 ### Golang
  * [Hugo](https://gohugo.io/ "Hugo :: A fast and modern static website engine")
+ 
+### Node.js
+ * [Hexo](https://hexo.io/ "Hexo: A fast, simple and powerful blog framework")
 
 ### Python
  * [Lektor](https://www.getlektor.com/ "Welcome | Lektor Static Content Management System")
