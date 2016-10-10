@@ -11,6 +11,9 @@ I'm constantly searching for new tools and resources after reading other blog po
  * [SendGrid](https://sendgrid.com/ "SendGrid - Marketing &amp; Transactional Email Service")
 
 # Publishing Platforms & Tools
+## Commenting
+ * [Disqus](https://disqus.com/ "Disqus &ndash; The #1 way to build your audience")
+
 ## Platforms <br><small>**Note:** Some platforms may appear twice below as as they have hosted and self-hosted options
 ### Hosted/SaaS
  * [Blogger](https://www.blogger.com/ "Blogger")
