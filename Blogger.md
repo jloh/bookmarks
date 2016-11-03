@@ -12,6 +12,7 @@ I'm constantly searching for new tools and resources after reading other blog po
 
 # Publishing Platforms & Tools
 ## Commenting
+ * [Discourse](http://www.discourse.org/ "Discourse - Civilized Discussion")
  * [Disqus](https://disqus.com/ "Disqus &ndash; The #1 way to build your audience")
 
 ## Platforms <br><small>**Note:** Some platforms may appear twice below as as they have hosted and self-hosted options
