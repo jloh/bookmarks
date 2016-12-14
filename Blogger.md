@@ -58,6 +58,7 @@ I'm constantly searching for new tools and resources after reading other blog po
 ### Ruby
  * [Jekyll](https://jekyllrb.com/ "Jekyll &bull; Simple, blog-aware, static sites")
  * [Middleman](https://middlemanapp.com/ "Middleman: Hand-crafted frontend development")
+ * [Nanoc](http://nanoc.ws/ "Nanoc: a static-site generator written in Ruby")
  * [Octopress](http://octopress.org/ "Octopress")
 
 # Writing Software
